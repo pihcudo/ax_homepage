@@ -5,10 +5,10 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const NAV_LINKS = [
-  { href: '/about', label: '사업부 소개' },
-  { href: '/services', label: '조직도' },
-  { href: '/business', label: '주요 사업' },
-  { href: '/news', label: '새소식' },
+  { href: '/about', label: '회사소개' },
+  { href: '/division', label: '사업부소개' },
+  { href: '/business', label: '주요사업' },
+  { href: '/news', label: '사업부소식' },
 ]
 
 export default function Nav() {

@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { newsItems } from '@/lib/data/newsData'
 
 export const metadata: Metadata = {
-  title: '새소식 | CUDO AX',
-  description: 'CUDO AX 사업부의 최신 뉴스, 인사이트, 케이스 스터디를 확인하세요.',
+  title: '사업부소식 | CUDO AX',
+  description: 'CUDO AX 사업부의 최신 뉴스와 소식을 확인하세요.',
 }
 
 export default function NewsPage() {
@@ -13,9 +13,9 @@ export default function NewsPage() {
       <section className="page-hero">
         <div className="container">
           <div className="page-hero__eyebrow en">LATEST NEWS</div>
-          <h1 className="page-hero__title">새소식</h1>
+          <h1 className="page-hero__title">사업부소식</h1>
           <p className="page-hero__desc">
-            CUDO AX 사업부의 최신 뉴스와 통찰을 확인하세요.
+            CUDO AX 사업부의 최신 소식을 확인하세요.
           </p>
         </div>
       </section>
@@ -26,7 +26,9 @@ export default function NewsPage() {
             {newsItems.map((n, i) => (
               <Link href={`/news/${n.slug}`} key={i} style={{ textDecoration: 'none' }}>
                 <article className="news-card">
-                  <div className="news-card__cover" data-placeholder={n.cover}>
+                  <div className="news-card__cover">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={n.cover} alt={n.title} className="news-card__img" />
                     <span className="news-card__tag en">{n.tag}</span>
                   </div>
                   <div className="news-card__body">

@@ -19,10 +19,12 @@ export default function News() {
         </div>
 
         <div className="news__grid">
-          {newsItems.map((n, i) => (
+          {newsItems.slice(0, 3).map((n, i) => (
             <Link href={`/news/${n.slug}`} key={i} style={{ textDecoration: 'none' }}>
               <article className="news-card">
-                <div className="news-card__cover" data-placeholder={n.cover}>
+                <div className="news-card__cover">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={n.cover} alt={n.title} className="news-card__img" />
                   <span className="news-card__tag en">{n.tag}</span>
                 </div>
                 <div className="news-card__body">
